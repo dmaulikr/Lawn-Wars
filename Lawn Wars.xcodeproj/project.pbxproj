@@ -15,6 +15,15 @@
 		1E5A58881F1E560300FA67B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A58861F1E560300FA67B1 /* Main.storyboard */; };
 		1E5A588A1F1E560300FA67B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A58891F1E560300FA67B1 /* Assets.xcassets */; };
 		1E5A588D1F1E560300FA67B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A588B1F1E560300FA67B1 /* LaunchScreen.storyboard */; };
+		1E5A58951F1E677A00FA67B1 /* Marty.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A58941F1E677A00FA67B1 /* Marty.sks */; };
+		1E5A5A0D1F1E98E800FA67B1 /* Ground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A5A0C1F1E98E800FA67B1 /* Ground.sks */; };
+		1E5A5A0F1F1E9C2400FA67B1 /* Neighbor1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A5A0E1F1E9C2400FA67B1 /* Neighbor1.sks */; };
+		1E5A5A121F1E9D9C00FA67B1 /* Neighbor2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A5A111F1E9D9C00FA67B1 /* Neighbor2.sks */; };
+		1E5A5A141F213E9500FA67B1 /* Neighbor3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A5A131F213E9500FA67B1 /* Neighbor3.sks */; };
+		1E5A5A161F21402300FA67B1 /* Neighbor4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A5A151F21402300FA67B1 /* Neighbor4.sks */; };
+		1E5A5A181F2156BB00FA67B1 /* Platform.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A5A171F2156BB00FA67B1 /* Platform.sks */; };
+		1E5A5A1A1F225ED300FA67B1 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A5A191F225ED300FA67B1 /* CGFloat+Extensions.swift */; };
+		1E5A5A1C1F291E8C00FA67B1 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A5A1B1F291E8A00FA67B1 /* MSButtonNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		1E5A58891F1E560300FA67B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E5A588C1F1E560300FA67B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E5A588E1F1E560300FA67B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E5A58941F1E677A00FA67B1 /* Marty.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Marty.sks; sourceTree = "<group>"; };
+		1E5A5A0C1F1E98E800FA67B1 /* Ground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ground.sks; sourceTree = "<group>"; };
+		1E5A5A0E1F1E9C2400FA67B1 /* Neighbor1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Neighbor1.sks; sourceTree = "<group>"; };
+		1E5A5A111F1E9D9C00FA67B1 /* Neighbor2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Neighbor2.sks; sourceTree = "<group>"; };
+		1E5A5A131F213E9500FA67B1 /* Neighbor3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Neighbor3.sks; sourceTree = "<group>"; };
+		1E5A5A151F21402300FA67B1 /* Neighbor4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Neighbor4.sks; sourceTree = "<group>"; };
+		1E5A5A171F2156BB00FA67B1 /* Platform.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Platform.sks; sourceTree = "<group>"; };
+		1E5A5A191F225ED300FA67B1 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		1E5A5A1B1F291E8A00FA67B1 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +80,18 @@
 			children = (
 				1E5A587C1F1E560200FA67B1 /* AppDelegate.swift */,
 				1E5A587E1F1E560200FA67B1 /* GameScene.sks */,
+				1E5A5A0C1F1E98E800FA67B1 /* Ground.sks */,
+				1E5A5A0E1F1E9C2400FA67B1 /* Neighbor1.sks */,
+				1E5A5A111F1E9D9C00FA67B1 /* Neighbor2.sks */,
+				1E5A5A131F213E9500FA67B1 /* Neighbor3.sks */,
+				1E5A5A151F21402300FA67B1 /* Neighbor4.sks */,
+				1E5A5A171F2156BB00FA67B1 /* Platform.sks */,
+				1E5A58941F1E677A00FA67B1 /* Marty.sks */,
 				1E5A58801F1E560200FA67B1 /* Actions.sks */,
 				1E5A58821F1E560200FA67B1 /* GameScene.swift */,
 				1E5A58841F1E560200FA67B1 /* GameViewController.swift */,
+				1E5A5A1B1F291E8A00FA67B1 /* MSButtonNode.swift */,
+				1E5A5A191F225ED300FA67B1 /* CGFloat+Extensions.swift */,
 				1E5A58861F1E560300FA67B1 /* Main.storyboard */,
 				1E5A58891F1E560300FA67B1 /* Assets.xcassets */,
 				1E5A588B1F1E560300FA67B1 /* LaunchScreen.storyboard */,
@@ -133,11 +160,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5A5A181F2156BB00FA67B1 /* Platform.sks in Resources */,
+				1E5A5A0F1F1E9C2400FA67B1 /* Neighbor1.sks in Resources */,
+				1E5A5A121F1E9D9C00FA67B1 /* Neighbor2.sks in Resources */,
 				1E5A58881F1E560300FA67B1 /* Main.storyboard in Resources */,
+				1E5A58951F1E677A00FA67B1 /* Marty.sks in Resources */,
+				1E5A5A0D1F1E98E800FA67B1 /* Ground.sks in Resources */,
 				1E5A587F1F1E560200FA67B1 /* GameScene.sks in Resources */,
 				1E5A588A1F1E560300FA67B1 /* Assets.xcassets in Resources */,
 				1E5A588D1F1E560300FA67B1 /* LaunchScreen.storyboard in Resources */,
+				1E5A5A161F21402300FA67B1 /* Neighbor4.sks in Resources */,
 				1E5A58811F1E560200FA67B1 /* Actions.sks in Resources */,
+				1E5A5A141F213E9500FA67B1 /* Neighbor3.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +184,9 @@
 			files = (
 				1E5A58831F1E560200FA67B1 /* GameScene.swift in Sources */,
 				1E5A58851F1E560200FA67B1 /* GameViewController.swift in Sources */,
+				1E5A5A1A1F225ED300FA67B1 /* CGFloat+Extensions.swift in Sources */,
 				1E5A587D1F1E560200FA67B1 /* AppDelegate.swift in Sources */,
+				1E5A5A1C1F291E8C00FA67B1 /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +350,7 @@
 				1E5A58931F1E560300FA67B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
