@@ -247,7 +247,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if contactA.categoryBitMask == 2 {
                 let impulseValue = nodeA.userData?.value(forKey: "impulse") as! Int
                 print(marty.position.y)
-                if marty.position.y > -175 {
+                if marty.position.y > -185 {
                 marty.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 let newImpulse = CGFloat(impulseValue) * CGFloat(randomNum)
                 print("New Impulse:", newImpulse)
@@ -267,7 +267,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if contactB.categoryBitMask == 2 {
                 let impulseValue = nodeB.userData?.value(forKey: "impulse") as! Int
                 print(marty.convert(neighbor3.position, to: self))
-                if marty.position.y  > -175 {
+                if marty.position.y  > -185 {
                 marty.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 let newImpulse = CGFloat(impulseValue) * CGFloat(randomNum)
                 print("New Impulse:", newImpulse)
@@ -314,7 +314,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
              marty.removeAllActions()
              //     restartButton?.isHidden == false */
             
-            restartScene()
+            marty.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+          
         }
         
     }
