@@ -39,6 +39,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var points = 0
     var scoreLabel: SKLabelNode!
     var gameState: GameSceneState = .active
+    var buttonRestart: MSButtonNode!
+    var pauseButton: MSButtonNode!
+    var unpauseButton: MSButtonNode!
     let randomNum: Double = Double(arc4random_uniform(3))
     
     // var restartButton: MSButtonNode?
@@ -56,38 +59,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         cameraNode = self.childNode(withName: "cameraNode") as! SKCameraNode
         scrollLayer = self.childNode(withName: "scrollLayer")
-        
+        pauseButton = self.childNode(withName: "pauseButton") as! MSButtonNode
+        unpauseButton = self.childNode(withName:"unpauseButton") as! MSButtonNode
         scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
+        buttonRestart = self.childNode(withName: "buttonRestart") as! MSButtonNode
         //  restartButton = self.childNode(withName: "restartButton") as? MSButtonNode
         
         physicsWorld.contactDelegate = self
         
         self.camera = cameraNode
         
-        //        /* Setup restart button selection handler */
-        //        restartButton?.selectedHandler = {
-        //
-        //            /* Grab reference to our SpriteKit view */
-        //            let skView = self.view as SKView!
-        //
-        //            /* Load Game scene */
-        //            let scene = GameScene(fileNamed:"GameScene") as GameScene!
-        //
-        //            /* Ensure correct aspect mode */
-        //            scene?.scaleMode = .aspectFill
-        //
-        //            /* Restart game scene */
-        //            skView?.presentScene(scene)
-        //
-        //        }
+                /* Setup restart button selection handler */
+                buttonRestart.selectedHandler = {
         
-        //        /* Hide restart button */
-        //        restartButton?.state = .MSButtonNodeStateHidden
+                  /* Grab reference to our SpriteKit view */
+                    let skView = self.view as SKView!
+        
+                    /* Load Game scene */
+                    let scene = GameScene(fileNamed:"GameScene") as GameScene!
+
+                    /* Ensure correct aspect mode */
+                    scene?.scaleMode = .aspectFill
+        
+                    /* Restart game scene */
+                    skView?.presentScene(scene)
+        
+               }
+        
+               /* Hide restart button */
+               buttonRestart?.state = .MSButtonNodeStateHidden
         
         /* Reset Score label */
         scoreLabel.text = "\(points)"
         
-        //      restartButton?.isHidden == true
+        
         
         marty.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 300))
         
@@ -97,6 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
+        
         
         velocitySwitch = true
         
@@ -124,11 +130,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval){
         
         /* Skip game update if game no longer active */
+        if gameState != .active { return }
         
-        /* Check and cap vertical velocity */
-        //        if velocityY > 400 {
-        //            marty.physicsBody?.velocity.dy = 400
-        //        }
+        /* Skip game update if game no longer active */
         
         if velocitySwitch == true {
             /* Grab current velocity */
@@ -250,8 +254,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if marty.position.y > -185 {
                 marty.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 let newImpulse = CGFloat(impulseValue) * CGFloat(randomNum)
-                print("New Impulse:", newImpulse)
-                
+                let martyVelocity = marty.physicsBody?.velocity
+                print("velocity:", martyVelocity)
                 marty.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 300))
                 nodeA.isHidden = true
                 /* Increment points */
@@ -290,17 +294,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /* Collision with the ground */
         if (contactA.categoryBitMask == 8 && contactB.categoryBitMask == 1) || (contactB.categoryBitMask == 8 && contactA.categoryBitMask == 1) {
-            /*  gameState = .gameOver
+            
+            if gameState != .active { return }
+            
+            gameState = .gameOver
              
              
              /* Reset angular velocity */
              marty.physicsBody?.angularVelocity = 0
              
-             /* Stop hero flapping animation */
+              //Stop hero flapping animation
              marty.removeAllActions()
-             //     restartButton?.isHidden == false */
             
-            restartScene()
+            /* Show restart button */
+            buttonRestart.state = .MSButtonNodeStateActive
+           
         }
         
         if (contactA.categoryBitMask == 16 && contactB.categoryBitMask == 1) || (contactB.categoryBitMask == 16 && contactA.categoryBitMask == 1) {
@@ -315,9 +323,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
              //     restartButton?.isHidden == false */
             
             marty.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            marty.physicsBody?.applyImpulse(CGVector(dx: 0, dy:100))
           
         }
         
+        /* Ensure only called while game running */
+       // if gameState != .active { return }
+        
+        /* Change game state to game over */
+        //gameState = .gameOver
+        
+        /* Stop hero flapping animation */
+        //marty.removeAllActions()
+        
+        /* Create our hero death action */
+        let heroDeath = SKAction.run({
+        
+        })
+        
+        /* Load the shake action resource */
+        //let shakeScene:SKAction = SKAction.init(named: "Shake")!
+        
+        /* Loop through all nodes  */
+        //for node in self.children {
+            
+            /* Apply effect each ground node */
+         //   node.run(shakeScene)
+      //  }
+        
+        /* Run action */
+        // marty.run(heroDeath)
+        
+        /* Show restart button */
+       // buttonRestart.state = .MSButtonNodeStateActive
     }
     
     func restartScene() {
